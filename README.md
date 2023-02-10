@@ -32,7 +32,7 @@ d.数据存储请使用机械硬盘，其挂载目录为“/hardisk”，共有�
 **2.通过 Vscode 中 remote-ssh 工具**  
 **※ 此操作是在个人PC端进行的 ※**  
 1.  Vscode 中下载 remote-ssh 工具  
-![安装remote.ssh](./src/1.安装 remote.ssh.png)  
+![安装remote.ssh](./src/1.安装 remote.ssh.png){:height="480px"width="270px"}  
 
 2. 打开右侧栏中 remote-ssh 工具，输入ssh指令链接到服务器  
 ssh指令：ssh -p < ID > root@temp.2018xjtu.tk  
