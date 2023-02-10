@@ -9,6 +9,8 @@
 * [二、服务器进阶配置](#2)
   * [2.1.服务器架设jupyter_notebook](#2.1)
   * [2.2.服务器conda使用](#2.2)
+* [三、服务器BUG处理](#3)
+  * [2.1.服务器架设jupyter_notebook](#3.1)
 ## <h2 id="1"><b> 一、基本使用用法 </b></h2>
 
 ### <h3 id="1.0"><b> 1.0.基础信息 </b></h2>
@@ -155,4 +157,16 @@ e.g. conda env create -f Test.yaml
 10. conda 安装 pytorch / tensorflow  
 pytorch安装：https://pytorch.org/get-started/locally/  
 tensorflow安装：https://www.tensorflow.org/install/pip
+
+## <h2 id="3"><b> 三、服务器BUG处理 </b></h2>
+### <h3 id="3.1"><b> 3.1.缺失libffi.so.8文件  </b></h2>
+**问题：ImportError: libffi.so.8: cannot open shared object file: No such file or director**
+![缺失libffi.so.8报错](./src/12.缺失libffi.so.8.png) 
+**解决方法：（下载对应安装包）**
+1. ls /usr/lib/x86_64-linux-gnu/ | grep "libffi" # 查看是否有libffi.so.8，并且查看现有libffi版本   
+1. sudo apt-get update   
+2. wget http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi8_3.4.2-4_amd64.deb  
+3. sudo dpkg -i libffi8_3.4.2-4_amd64.deb  
+4. ls /usr/lib/x86_64-linux-gnu/ | grep "libffi" # 查看是否有libffi.so.8，如果有的话，问题解决   
+
 
