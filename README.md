@@ -1,8 +1,8 @@
-img[src*="#w50"] {
-  display: block;
-  width: 50%;
-  height: auto;
-  margin: auto;
+.gt-post-content img {
+    display: block;
+    max-width: 50%;
+    border-radius: 2px;
+    margin: 18px auto;
 }
 # **创新港服务器使用手册**
 修订时间：2023年2月9日  
@@ -38,7 +38,7 @@ d.数据存储请使用机械硬盘，其挂载目录为“/hardisk”，共有�
 **2.通过 Vscode 中 remote-ssh 工具**  
 **※ 此操作是在个人PC端进行的 ※**  
 1.  Vscode 中下载 remote-ssh 工具  
-![安装remote.ssh](./src/1.安装 remote.ssh.png#w50)
+![安装remote.ssh](./src/1.安装 remote.ssh.png)
 
 2. 打开右侧栏中 remote-ssh 工具，输入ssh指令链接到服务器  
 ssh指令：ssh -p < ID > root@temp.2018xjtu.tk  
