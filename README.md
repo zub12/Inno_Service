@@ -1,9 +1,3 @@
-.gt-post-content img {
-    display: block;
-    max-width: 50%;
-    border-radius: 2px;
-    margin: 18px auto;
-}
 # **创新港服务器使用手册**
 修订时间：2023年2月9日  
 <b>※※※ 此服务器优势在于使用lxd进行分区管理，使得各位使用者均可使用root权限，登陆用户即为root用户 ※※※</b>  
