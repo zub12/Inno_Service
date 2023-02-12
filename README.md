@@ -167,6 +167,7 @@ tensorflow安装：https://www.tensorflow.org/install/pip
 1. sudo apt-get update   
 2. wget http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi8_3.4.2-4_amd64.deb  
 3. sudo dpkg -i libffi8_3.4.2-4_amd64.deb  
-4. ls /usr/lib/x86_64-linux-gnu/ | grep "libffi" # 查看是否有libffi.so.8，如果有的话，问题解决   
+4. ls /usr/lib/x86_64-linux-gnu/ | grep "libffi" # 查看是否有libffi.so.8，如果有的话，问题解决 
+5. ln -s /usr/lib/x86_64-linux-gnu/libffi.so.8 /root/miniconda3/lib/libffi.so.8     
 
 
