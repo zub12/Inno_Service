@@ -9,6 +9,7 @@
 * [二、服务器进阶配置](#2)
   * [2.1.服务器架设jupyter_notebook](#2.1)
   * [2.2.服务器conda使用](#2.2)
+  * [2.3.服务器matlab使用](#2.3)
 * [三、服务器BUG处理](#3)
   * [3.1.缺失libffi.so.8文件](#3.1)
 ## <h2 id="1"><b> 一、基本使用用法 </b></h2>
@@ -88,6 +89,7 @@ service ssh restart # 重新启动ssh程序
 
 **※ 此操作是在个人PC端进行的 ※**
 此操作可用scp进行，但scp文件传输容易出现断线无法恢复等状况    
+> rsync参考：https://www.escapelife.site/posts/a207988d.html  
 
 1. 将服务器文件传输到个人PC端   
 rsync -avtP -e " ssh -p < ID > " root@temp.2018xjtu.tk:<服务器中文件的※绝对路径※> <传输到个人PC端的位置> # 使用rsync进行文件传输；  
@@ -95,7 +97,7 @@ e.g. rsync -avtP -e "ssh -p 1002" root@temp.2018xjtu.tk:/root/XXX ./XXX
 
 2. 将个人PC端文件传输到服务器  
 rsync -avtP -e " ssh -p < ID > " <传输到个人PC端的位置>  root@temp.2018xjtu.tk:<服务器中文件的※绝对路径※> # 使用rsync进行文件传输；  
-e.g. rsync -avtP -e "ssh -p 1002" root@temp.2018xjtu.tk:/root/XXX ./XXX  
+e.g. rsync -avtP -e "ssh -p 1002" ./XXX root@temp.2018xjtu.tk:/root/XXX 
 
 3. （可选）个人PC端为Linux系统，可以使用 “Trans_files.sh” 进行防断文件传输
 修改脚本，选择需要的传输方向（注释不需要的传输方向），修改所需传输文件路径；      
@@ -157,6 +159,14 @@ e.g. conda env create -f Test.yaml
 10. conda 安装 pytorch / tensorflow  
 pytorch安装：https://pytorch.org/get-started/locally/  
 tensorflow安装：https://www.tensorflow.org/install/pip
+
+### <h3 id="2.3"><b> 2.3.服务器matlab使用 </b></h2>
+1. 输入matlab即可进行使用  
+2. 配置无桌面版运行（在~/.bashrc中添加如下字段）  
+#Add an “mrun” alias for running matlab in the terminal.  
+alias mrun=“matlab -nodesktop -nosplash -logfile date +%Y_%m_%d-%H_%M_%S.log -r”  
+3. 运行无桌面版maltab文件
+mrun \<matlabfile\>
 
 ## <h2 id="3"><b> 三、服务器BUG处理 </b></h2>
 ### <h3 id="3.1"><b> 3.1.缺失libffi.so.8文件  </b></h2>
